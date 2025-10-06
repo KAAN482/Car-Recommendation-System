@@ -1,0 +1,200 @@
+/* Genel Ayarlar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffffcc; /* Hafif transparan */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    color: #34495e;
+}
+
+/* 2 Sütunlu Layout */
+.main-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.favorites-container {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 15px;
+    background: #f7f9fc;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.content-section {
+    flex: 3;
+}
+
+/* Form Alanları */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #5d7cfa;
+    outline: none;
+    box-shadow: 0 0 5px rgba(93,124,250,0.3);
+}
+
+/* Butonlar */
+button {
+    background-color: #5d7cfa;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #4a69d1;
+}
+
+/* Araç Kartları */
+.results-container, .favorites-container {
+    margin-top: 20px;
+}
+
+.car-card, .favorite-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.car-card:hover, .favorite-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.car-link {
+    color: #5d7cfa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.car-link:hover {
+    text-decoration: underline;
+}
+
+/* Favoriler Butonu */
+.remove-fav-button, .add-to-fav-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.remove-fav-button:hover, .add-to-fav-button:hover {
+    background-color: #e94e4e;
+}
+
+.clear-button {
+    background-color: #ff9f43;
+    margin-top: 10px;
+}
+
+.clear-button:hover {
+    background-color: #e07b20;
+}
+
+/* Gelişmiş seçenekler toggle */
+.hidden {
+    display: none;
+}
+
+.advanced-options-toggle {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #5d7cfa;
+    font-weight: bold;
+}
+
+/* Sayfalama */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+.pagination button {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+/* Status mesajları */
+.status-message {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.error-message {
+    color: #e74c3c;
+}
+.success-message {
+    color: #2ecc71;
+}
+
+/* Mobil Uyumluluk */
+@media(max-width: 900px) {
+    .main-layout {
+        flex-direction: column;
+    }
+}

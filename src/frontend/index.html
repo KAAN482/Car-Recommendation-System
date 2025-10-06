@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araba Öneri Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚗 Araba Öneri Sistemi</h1>
+        <p>Aşağıdaki formdan aradığınız araba özelliklerini girerek size en uygun ikinci el araçları bulun.</p>
+
+        <div class="main-layout">
+            <div id="favorites-section" class="favorites-container">
+                <h3>⭐ Favori İlanlar</h3>
+                <div id="favorites-list"></div>
+                <button id="clear-favorites" class="clear-button">Tüm Favorileri Temizle</button>
+            </div>
+
+            <div class="content-section">
+                <form id="recommendation-form">
+                    <div class="form-group">
+                        <label for="marka-select">Marka*</label>
+                        <select id="marka-select" required>
+                            <option value="">Seçiniz</option>
+                            <option value="Audi">Audi</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Citroen">Citroen</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="Opel">Opel</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="Renault">Renault</option>
+                            <option value="Skoda">Skoda</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group hidden" id="marka-other-container">
+                        <label for="marka-other">Diğer Markayı Girin*</label>
+                        <input type="text" id="marka-other" placeholder="örn: Tesla">
+                    </div>
+
+                    <div class="form-group advanced-options-toggle">
+                        <span id="toggle-advanced"> Gelişmiş Arama Seçenekleri</span>
+                    </div>
+
+                    <div id="advanced-options" class="hidden">
+                        <div class="form-group">
+                            <label for="seri">Seri</label>
+                            <input type="text" id="seri" placeholder="örn: Megane">
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <input type="text" id="model" placeholder="örn: Sport Tourer">
+                        </div>
+                        <div class="form-group">
+                            <label for="vites">Vites Tipi</label>
+                            <select id="vites">
+                                <option value="">Seçiniz</option>
+                                <option value="Düz">Düz</option>
+                                <option value="Otomatik">Otomatik</option>
+                                <option value="Yarı Otomatik">Yarı Otomatik</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="yakit">Yakıt Tipi</label>
+                            <select id="yakit">
+                                <option value="">Seçiniz</option>
+                                <option value="Benzin">Benzin</option>
+                                <option value="Dizel">Dizel</option>
+                                <option value="Elektrik">Elektrik</option>
+                                <option value="Hibrit">Hibrit</option>
+                                <option value="LPG & Benzin">LPG & Benzin</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ekstra">Ekstra Özellikler</label>
+                            <input type="text" id="ekstra" placeholder="örn: sunroof, deri koltuk">
+                        </div>
+                        <div class="form-group">
+                            <label for="alt_fiyat">Alt Fiyat</label>
+                            <input type="text" id="alt_fiyat" placeholder="örn: 50.000" oninput="formatNumber(this)">
+                        </div>
+                        <div class="form-group">
+                            <label for="ust_fiyat">Üst Fiyat</label>
+                            <input type="text" id="ust_fiyat" placeholder="örn: 1.000.000" oninput="formatNumber(this)">
+                        </div>
+                        <div class="form-group">
+                            <label for="min_km">Minimum Km</label>
+                            <input type="text" id="min_km" placeholder="örn: 10.000" oninput="formatNumber(this)">
+                        </div>
+                        <div class="form-group">
+                            <label for="max_km">Maksimum Km</label>
+                            <input type="text" id="max_km" placeholder="örn: 50.000" oninput="formatNumber(this)">
+                        </div>
+                        <div class="form-group">
+                            <label for="min_yil">Minimum Yıl</label>
+                            <input type="number" id="min_yil" placeholder="örn: 2015">
+                        </div>
+                        <div class="form-group">
+                            <label for="max_yil">Maksimum Yıl</label>
+                            <input type="number" id="max_yil" placeholder="örn: 2023">
+                        </div>
+                    </div>
+
+                    <button type="submit">Ara</button>
+                </form>
+
+                <div id="results" class="results-container">
+                    <p id="status-message"></p>
+                </div>
+
+                <div id="pagination" class="pagination hidden">
+                    <button id="prev-page">Önceki</button>
+                    <span id="page-info"></span>
+                    <button id="next-page">Sonraki</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
